@@ -8,19 +8,19 @@
                         @csrf
                         <div class="mb-4">
                             <label for="nombres" class="block text-gray-700">Nombres:</label>
-                            <input type="text" id="nombres" class="form-input rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500"  placeholder="Ingrese sus nombres" required>
+                            <input type="text" id="nombres" name="nombres" class="form-input rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500"  placeholder="Ingrese sus nombres" required>
                         </div>
                         <div class="mb-4">
                             <label for="email" class="block text-gray-700">Correo:</label>
-                            <input type="email" id="email"  class="form-input rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Ingrese su correo" required>
+                            <input type="email" id="email" name="email"  class="form-input rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Ingrese su correo" required>
                         </div>
                         <div class="mb-4">
                             <label for="telefono" class="block text-gray-700">Teléfono:</label>
-                            <input type="number" id="telefono"  class="form-input rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                            <input type="number" id="telefono" name="telefono"  class="form-input rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
                         </div>
                         <div class="mb-4">
                             <label for="direccion" class="block text-gray-700">Dirección:</label>
-                            <input type="text" id="direccion"class="form-input rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Ingrese su dirección">
+                            <input type="text" id="direccion" name="direccion" class="form-input rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Ingrese su dirección">
                         </div>
                         <div class="mt-6 text-center">
                           <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Guardar</button>

@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('alertas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('titulo');
             $table->string('descripcion');
+            $table->dateTime('hora');
             $table->foreignId('usuario_id')->constrained();
             $table->foreignId('delito_id')->constrained();
         });

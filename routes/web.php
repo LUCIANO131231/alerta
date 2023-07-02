@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\DelitoController;
+use App\Http\Controllers\AlertaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,13 @@ Route::get("usuarios/registrar", [UsuarioController::class, "registrar"])
           
 Route::post("usuarios/guardar", [UsuarioController::class, "guardar"]);
 
+
+Route::delete("usuarios/eliminar/{id}", [UsuarioController::class, "eliminar"])
+    ->name("ueliminarusuario")
+    ->middleware("auth");
+
+
+
 // DELITOS
 
 Route::get("delitos/mostrar", [DelitoController::class, "index"])
@@ -55,3 +63,15 @@ Route::get("delitos/registrar", [DelitoController::class, "registrar"])
     ->middleware("auth");
 
 Route::post("delitos/guardar", [DelitoController::class, "guardar"]);
+
+// ALERTAS
+
+Route::get('alertas/mostrar', [AlertaController::class, 'index'])
+    ->name('amostraralerta')
+    ->middleware('auth');
+
+Route::get('alertas/registrar', [AlertaController::class, 'registrar'])
+    ->name('aregistraralerta')
+    ->middleware('auth');
+
+Route::post('alertas/guardar', [AlertaController::class, 'guardar']);

@@ -28,4 +28,13 @@ class UsuarioController extends Controller
         Usuario::create($request->all());
         return redirect("usuarios/mostrar");
     }
+
+
+    public function eliminar($id){
+        $usuario = Usuario::find($id);
+        $usuario->delete();
+        return redirect("usuarios/mostrar");
+    }
+
+
 }

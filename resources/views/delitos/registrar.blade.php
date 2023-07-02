@@ -28,7 +28,7 @@
                         </div>
                         <div class="mb-4">
                             <label for="usuario_id" class="block mb-2">Usuario:</label>
-                            <select class="form-select rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500" name="usuario_id">
+                            <select class="form-select rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500" id="usuario_id">
                                 @foreach($usuarios as $usuario)
                                     <option value="{{ $usuario->id }}">{{ $usuario->nombres }}</option>
                                 @endforeach

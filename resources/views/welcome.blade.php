@@ -101,8 +101,8 @@
             </div>
         </div>
     </section>
-                <div class="p-6 text-gray-900">
-                    <p class="text-center">&copy; {{ date('Y') }} Alerta de Crimen. Todos los derechos reservados.</p>
-                </div>
+    <div class="p-6 text-gray-900">
+        <p class="text-center">&copy; {{ date('Y') }} Alerta de Crimen. Todos los derechos reservados.</p>
+    </div>
 </body>
 </html>
