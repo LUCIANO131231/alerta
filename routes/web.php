@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-//
+// USUARIOS
 
 Route::get("usuarios/mostrar", [UsuarioController::class, "index"])
     ->name("umostrarusuario")
@@ -44,7 +44,7 @@ Route::get("usuarios/registrar", [UsuarioController::class, "registrar"])
           
 Route::post("usuarios/guardar", [UsuarioController::class, "guardar"]);
 
-//
+// DELITOS
 
 Route::get("delitos/mostrar", [DelitoController::class, "index"])
     ->name("dmostrardelito")

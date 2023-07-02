@@ -1,23 +1,45 @@
 <x-app-layout>
-<br><br><br>
-    <center>
-    <h1 style="font-size: 24px;"><strong>REGISTRO DE DELITOS</strong></h1><br>
-      <form method="POST" action="guardar">
-        @csrf
-        <input type="text" class="form-control mb-3  focus:bg-red-100" name="tipoDelito" placeholder="Ingrese la modalidad que ha sufrido del robo" required><br>
-        <input type="text" class="form-control mb-3  focus:bg-red-100" name="lugarDelito" placeholder="Ingrese el lugar de los hechos" required><br>
-        <input type="text" class="form-control mb-3  focus:bg-red-100" name="descripcion" placeholder="Por favor describa lo ocurrido!" required><br>
-        <label for="imagenDelito">Imagen del Delito: </label>
-        <input type="file" name="imagenDelito"><br>
-        <label for="videoDelito">Video del Delito:</label>
-        <input type="file" id="videoDelito">
-        <select name="usuario_id">
-            @foreach($usuarios as $usuario)
-                <option value="{{ $usuario->id }}">{{ $usuario->nombre }}</option>
-            @endforeach
-        </select>
-        <input type="submit" class="bg-blue-500 hover:bg-red-800 text-write font-bold py-2 px-4 rounded"  value="Guardar">
-      </form>
-    </center>
-
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6">
+                    <h1 class="text-2xl font-bold mb-4 text-center">REGISTRO DE DELITOS</h1>
+                    <form method="POST" action="guardar" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-4">
+                            <label for="tipoDelito" class="block mb-2">Modalidad de robo:</label>
+                            <input type="text" class="form-input rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500" name="tipoDelito" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="lugarDelito" class="block mb-2">Lugar de los hechos:</label>
+                            <input type="text" class="form-input rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500" name="lugarDelito" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="descripcion" class="block mb-2">Descripción del delito:</label>
+                            <textarea class="form-input rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500" name="descripcion" required></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="imagenDelito" class="block mb-2">Imagen del delito:</label>
+                            <input type="file" class="form-input" name="imagenDelito">
+                        </div>
+                        <div class="mb-4">
+                            <label for="videoDelito" class="block mb-2">Video del delito:</label>
+                            <input type="file" class="form-input" name="videoDelito">
+                        </div>
+                        <div class="mb-4">
+                            <label for="usuario_id" class="block mb-2">Usuario:</label>
+                            <select class="form-select rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500" name="usuario_id">
+                                @foreach($usuarios as $usuario)
+                                    <option value="{{ $usuario->id }}">{{ $usuario->nombres }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </x-app-layout>
