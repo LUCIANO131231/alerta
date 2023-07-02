@@ -18,11 +18,12 @@ class UsuarioController extends Controller
     }
 
     public function guardar(Request $request){
+
         $validacion = $request->validate([
             "nombres" => "required",
             "email" => "required",
             "telefono" => "required",
-            "direccion" => "required"
+            "direccion" => ""
         ]);
         Usuario::create($request->all());
         return redirect("usuarios/mostrar");

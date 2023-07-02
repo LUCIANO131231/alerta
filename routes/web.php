@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\DelitoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,11 +35,23 @@ require __DIR__.'/auth.php';
 //
 
 Route::get("usuarios/mostrar", [UsuarioController::class, "index"])
-          ->name("umostrarusuario")
-          ->middleware('auth'); 
+    ->name("umostrarusuario")
+    ->middleware('auth'); 
 
 Route::get("usuarios/registrar", [UsuarioController::class, "registrar"])
-          ->name("uregistrarusuario")
-          ->middleware("auth");
+    ->name("uregistrarusuario")
+    ->middleware("auth");
           
 Route::post("usuarios/guardar", [UsuarioController::class, "guardar"]);
+
+//
+
+Route::get("delitos/mostrar", [DelitoController::class, "index"])
+    ->name("dmostrardelito")
+    ->middleware('auth');
+
+Route::get("delitos/registrar", [DelitoController::class, "registrar"])
+    ->name("dregistrardelito")
+    ->middleware("auth");
+
+Route::post("delitos/guardar", [DelitoController::class, "guardar"]);

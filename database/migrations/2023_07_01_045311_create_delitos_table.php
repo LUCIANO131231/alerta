@@ -18,7 +18,7 @@ return new class extends Migration
             $table->dateTime('horaDelito');
             $table->string('descripcion');
             $table->string('imagenDelito');
-            $table->string('videoDelito');
+            $table->string('videoDelito')->nullable();
             $table->foreignId('usuario_id')->constrained();
         });
     }
