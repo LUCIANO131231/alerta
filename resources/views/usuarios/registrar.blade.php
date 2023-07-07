@@ -15,6 +15,11 @@
                             <input type="email" id="email" name="email"  class="form-input rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Ingrese su correo" required>
                         </div>
                         <div class="mb-4">
+                            <label for="password" class="block text-gray-700">Contraseña:</label>
+                            <input type="password" id="password" name="password" class="form-input rounded-md w-full focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Ingrese su contraseña" required>
+                        </div>
+
+                        <div class="mb-4">
                             <label for="telefono" class="block text-gray-700">Teléfono:</label>
                             <input type="number" id="telefono" name="telefono"  class="form-input rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
                         </div>

@@ -45,6 +45,9 @@ Route::get("usuarios/registrar", [UsuarioController::class, "registrar"])
           
 Route::post("usuarios/guardar", [UsuarioController::class, "guardar"]);
 
+Route::get('usuarios/editar/{id}', [UsuarioController::class, 'editar'])
+    ->name('ueditarusuario')
+    ->middleware("auth");
 
 Route::delete("usuarios/eliminar/{id}", [UsuarioController::class, "eliminar"])
     ->name("ueliminarusuario")

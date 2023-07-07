@@ -15,6 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('nombres');
             $table->string('email');
+            $table->string('password');
             $table->integer('telefono');
             $table->string('direccion');
         });
