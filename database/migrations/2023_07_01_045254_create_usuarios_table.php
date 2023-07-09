@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('nombres');
             $table->string('email');
             $table->string('password');
-            $table->integer('telefono');
-            $table->string('direccion');
+            $table->string('telefono')->nullable();
+            $table->string('direccion')->nullable();
         });
     }
 

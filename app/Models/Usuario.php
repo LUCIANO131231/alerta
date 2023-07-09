@@ -10,6 +10,12 @@ class Usuario extends Model
     use HasFactory;
 
     public $timestamps = false;
+    
     protected $fillable = ['nombres', 'email', 'telefono', 'direccion', 'password'];
+
+    public function alertas()
+    {
+        return $this->hasMany(Alerta::class);
+    }
 
 }

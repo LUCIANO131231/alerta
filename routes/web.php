@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\DelitoController;
+use App\Http\Controllers\CategoriaDelitoController;
 use App\Http\Controllers\AlertaController;
 
 /*
@@ -33,8 +34,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-// USUARIOS
-
+// USUARIOS *****************************************************************
 Route::get("usuarios/mostrar", [UsuarioController::class, "index"])
     ->name("umostrarusuario")
     ->middleware('auth'); 
@@ -45,18 +45,15 @@ Route::get("usuarios/registrar", [UsuarioController::class, "registrar"])
           
 Route::post("usuarios/guardar", [UsuarioController::class, "guardar"]);
 
-Route::get('usuarios/editar/{id}', [UsuarioController::class, 'editar'])
-    ->name('ueditarusuario')
+Route::put('usuarios/actualizar/{id}', [UsuarioController::class, 'actualizar'])
+    ->name('uactualizarusuario')
     ->middleware("auth");
 
 Route::delete("usuarios/eliminar/{id}", [UsuarioController::class, "eliminar"])
     ->name("ueliminarusuario")
     ->middleware("auth");
 
-
-
-// DELITOS
-
+// DELITOS *****************************************************************
 Route::get("delitos/mostrar", [DelitoController::class, "index"])
     ->name("dmostrardelito")
     ->middleware('auth');
@@ -67,14 +64,40 @@ Route::get("delitos/registrar", [DelitoController::class, "registrar"])
 
 Route::post("delitos/guardar", [DelitoController::class, "guardar"]);
 
-// ALERTAS
+Route::put('delitos/actualizar/{id}', [DelitoController::class, 'actualizar'])
+    ->name('dactualizardelito')
+    ->middleware("auth");
 
+Route::delete("delitos/eliminar/{id}", [DelitoController::class, "eliminar"])
+    ->name("deliminardelito")
+    ->middleware("auth");
+
+// CATEGORIA DE DELITOS *****************************************************************
+Route::get("categorias/mostrar", [CategoriaDelitoController::class, "index"])
+    ->name("cmostrarcategoria")
+    ->middleware('auth');
+
+Route::get("categorias/registrar", [CategoriaDelitoController::class, "registrar"])
+    ->name("cregistrarcategoria")
+    ->middleware("auth");
+
+Route::post("categorias/guardar", [CategoriaDelitoController::class, "guardar"]);
+
+Route::put('categorias/actualizar/{id}', [CategoriaDelitoController::class, 'actualizar'])
+    ->name('cactualizarcategoria')
+    ->middleware("auth");
+
+Route::delete("categorias/eliminar/{id}", [CategoriaDelitoController::class, "eliminar"])
+    ->name("celiminarcategoria")
+    ->middleware("auth");
+
+// ALERTAS
 Route::get('alertas/mostrar', [AlertaController::class, 'index'])
     ->name('amostraralerta')
     ->middleware('auth');
 
-Route::get('alertas/registrar', [AlertaController::class, 'registrar'])
-    ->name('aregistraralerta')
-    ->middleware('auth');
-
 Route::post('alertas/guardar', [AlertaController::class, 'guardar']);
+
+Route::delete("alerta/eliminar/{id}", [AlertaController::class, "eliminar"])
+    ->name("aeliminaralerta")
+    ->middleware("auth");

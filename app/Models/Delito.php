@@ -4,27 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Usuario;
 class Delito extends Model
 {
     use HasFactory;
-    
-    protected $guarded = ['_token'];
 
     public $timestamps = false;
 
-    protected $fillable = [
-        'tipoDelito',
-        'lugarDelito',
-        'horaDelito',
-        'descripcion',
-        'imagenDelito',
-        'videoDelito',
-        'usuario_id',
-        '_token',
-    ];
+    protected $fillable = ['descripcion','fechaHoraDelito','usuario_id'];
 
     public function usuario(){
         return $this->belongsTo(Usuario::class, 'usuario_id');
+    }
+
+    public function alertas(){
+    return $this->hasMany(Alerta::class);
     }
 }

@@ -17,8 +17,7 @@
     <!-- Styles -->
     <style>
         body {
-            background: linear-gradient(to bottom right, #4f46e5, #fe7c02);
-            font-family: 'Figtree', sans-serif;
+            background-color: #a5b4f3;
         }
 
         .vh-100 {

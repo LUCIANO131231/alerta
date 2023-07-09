@@ -13,12 +13,9 @@ return new class extends Migration
     {
         Schema::create('delitos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('tipoDelito');
-            $table->string('lugarDelito');
-            $table->dateTime('horaDelito');
             $table->string('descripcion');
-            $table->string('imagenDelito');
-            $table->string('videoDelito')->nullable();
+            $table->enum('tipo', ['Robo','Hurto','Vandalismo','Homicidio','Violación','Estafa','Agresión','Secuestro','Tráfico de drogas','Amenazas','Extorsión','Abuso sexual','Violencia doméstica','Maltrato infantil','Delitos informáticos','Delitos medioambientales']);
+            $table->dateTime('fechaHoraDelito');
             $table->foreignId('usuario_id')->constrained();
         });
     }
