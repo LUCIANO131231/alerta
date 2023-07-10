@@ -6,6 +6,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\DelitoController;
 use App\Http\Controllers\CategoriaDelitoController;
 use App\Http\Controllers\AlertaController;
+use App\Http\Controllers\UbicacionDelitoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -96,12 +97,29 @@ Route::get('alertas/mostrar', [AlertaController::class, 'index'])
     ->name('amostraralerta')
     ->middleware('auth');
 
-Route::get("alertas/registrar", [AlertaController::class, "registrar"])
-    ->name("aregistraralerta")
-    ->middleware("auth");
-
 Route::post('alertas/guardar', [AlertaController::class, 'guardar']);
 
 Route::delete("alerta/eliminar/{id}", [AlertaController::class, "eliminar"])
     ->name("aeliminaralerta")
     ->middleware("auth");
+
+
+// UBICACIONES
+Route::get('ubicaciones/mostrar', [UbicacionDelitoController::class, 'index'])
+    ->name('bmostrarubicacion')
+    ->middleware('auth');
+
+Route::get("ubicaciones/registrar", [UbicacionDelitoController::class, "registrar"])
+    ->name("bregistrarubicacion")
+    ->middleware("auth");
+
+Route::post('ubicaciones/guardar', [UbicacionDelitoController::class, 'guardar']);
+
+Route::put('ubicaciones/actualizar/{id}', [CategoriaDelitoController::class, 'actualizar'])
+    ->name('bactualizarubicaciones')
+    ->middleware("auth");
+
+Route::delete("ubicaciones/eliminar/{id}", [UbicacionDelitoController::class, "eliminar"])
+    ->name("beliminarubicacion")
+    ->middleware("auth");
+
