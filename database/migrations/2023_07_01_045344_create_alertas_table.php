@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('titulo');
             $table->text('descripcion');
             $table->dateTime('hora');
-            $table->foreignId('usuario_id')->constrained();
-            $table->foreignId('delito_id')->constrained();
+            $table->unsignedBigInteger('delito_id');
+            $table->unsignedBigInteger('usuario_id');
         });
     }
 

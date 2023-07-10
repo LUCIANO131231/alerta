@@ -96,6 +96,10 @@ Route::get('alertas/mostrar', [AlertaController::class, 'index'])
     ->name('amostraralerta')
     ->middleware('auth');
 
+Route::get("alertas/registrar", [AlertaController::class, "registrar"])
+    ->name("aregistraralerta")
+    ->middleware("auth");
+
 Route::post('alertas/guardar', [AlertaController::class, 'guardar']);
 
 Route::delete("alerta/eliminar/{id}", [AlertaController::class, "eliminar"])
