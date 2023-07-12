@@ -6,9 +6,9 @@
                     <div>
                         <img src="images/alerta.gif" alt="Logo" class="h-10 mr-2">
                     </div>
-                    <h1 class="font-bold mb-4 text-4xl leading-tight text-transparent bg-gradient-to-r from-black via-red-500 to-white bg-clip-text text-shadow">Bienvenido - Alerta de Crimen</h1>
+                    <h1 class="font-bold mb-4 text-4xl leading-tight text-transparent bg-gradient-to-r from-black via-red-500 to-white bg-clip-text text-shadow">Alerta de Crimen</h1>
                     <p class="text-gray-800">
-                        ¡Gracias por iniciar sesión! Alerta de Crimen es una aplicación diseñada para ayudarte a mantenerte informado sobre la seguridad en tu área. Aquí encontrarás noticias y alertas sobre delitos, así como recursos para reportar incidentes y mantener tu comunidad segura.
+                        Alerta de Crimen es una aplicación diseñada para ayudarte a mantenerte informado sobre la seguridad en tu área. Aquí encontrarás noticias y alertas sobre delitos, así como recursos para reportar incidentes y mantener tu comunidad segura.
                     </p>
                 </div>
                 <div class="flex justify-center items-center">

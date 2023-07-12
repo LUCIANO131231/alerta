@@ -5,13 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UbicacionDelito extends Model
+class ArchivoDelito extends Model
 {
     use HasFactory;
-
+  
     public $timestamps = false;
-    
-    protected $fillable = ['lugar', 'latitud', 'longitud', 'usuario_id'];
+
+    protected $fillable = ['videoDelito','imagenDelito','usuario_id','delito_id'];
+
+    public function delito()
+    {
+        return $this->belongsTo(Delito::class);
+    }
 
     public function usuario()
     {

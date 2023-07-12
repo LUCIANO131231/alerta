@@ -12,27 +12,33 @@
         <thead class="table-success">
             <tr>
                 <th>ID</th>
-                <th>Lugar</th>
-                <th>Latitud</th>
-                <th>Longitud</th>
                 <th>Usuario</th>
-                <th class="text-center">Opcion</th>
+                <th>Delito</th>
+                <th>Imagen</th>
+                <th>Video</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($ubicacionDelitos as $ubicacionDelito)
+            @foreach ($archivos as $archivo)
             <tr>
-                <td>{{ $ubicacionDelito->id}}</td>
-                <td>{{ $ubicacionDelito->lugar}}</td>
-                <td>{{ $ubicacionDelito->latitud}}</td>
-                <td>{{ $ubicacionDelito->longitud}}</td>
-                <td>{{ $ubicacionDelito->usuario->nombres}}</td>
-                <td class="d-flex justify-content-center align-items-center">
-                    <form action="{{ route('beliminarubicacion', ['id' => $ubicacionDelito->id]) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este usuario?')" class="mx-2"><i class="bi bi-trash3"></i></button>
-                    </form>
+                <td>{{ $archivo->id }}</td>
+                <td>{{ $archivo->usuario->nombres }}</td>
+                <td>{{ $archivo->delito->tipo }}</td>
+                <td>
+                    <div class="image-container">
+                        @if ($archivo->imagenDelito)
+                        <img src="{{ asset('imagenes/' . $archivo->imagenDelito) }}"  width="200px" height="200px">
+                        @else
+                        No se ha cargado ninguna imagen.
+                        @endif
+                    </div>
+                </td>
+                <td>
+                    @if ($archivo->videoDelito)
+                    <video src="{{ asset('videos/' . $archivo->videoDelito) }}" controls></video>
+                    @else
+                    No se ha cargado ningún video.
+                    @endif
                 </td>
             </tr>
             @endforeach

@@ -7,7 +7,7 @@ use App\Http\Controllers\DelitoController;
 use App\Http\Controllers\CategoriaDelitoController;
 use App\Http\Controllers\AlertaController;
 use App\Http\Controllers\UbicacionDelitoController;
-
+use App\Http\Controllers\ArchivoDelitoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -115,11 +115,21 @@ Route::get("ubicaciones/registrar", [UbicacionDelitoController::class, "registra
 
 Route::post('ubicaciones/guardar', [UbicacionDelitoController::class, 'guardar']);
 
-Route::put('ubicaciones/actualizar/{id}', [CategoriaDelitoController::class, 'actualizar'])
-    ->name('bactualizarubicaciones')
-    ->middleware("auth");
-
 Route::delete("ubicaciones/eliminar/{id}", [UbicacionDelitoController::class, "eliminar"])
     ->name("beliminarubicacion")
     ->middleware("auth");
 
+// ARCHIVOS
+Route::get('archivos/mostrar', [ArchivoDelitoController::class, 'index'])
+    ->name('rmostrararchivo')
+    ->middleware('auth');
+
+Route::get("archivos/registrar", [ArchivoDelitoController::class, "registrar"])
+    ->name("rregistrararchivo")
+    ->middleware("auth");
+
+Route::post('archivos/guardar', [ArchivoDelitoController::class, 'guardar']);
+
+Route::delete("archivos/eliminar/{id}", [ArchivoDelitoController::class, "eliminar"])
+    ->name("reliminararchivo")
+    ->middleware("auth");
